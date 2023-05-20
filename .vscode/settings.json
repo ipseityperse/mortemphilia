@@ -1,0 +1,31 @@
+{
+    "python.analysis.inlayHints.variableTypes": true,
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.importFormat": "relative",
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportSelfClsParameterName": "none",
+        "reportUnnecessaryIsInstance": "none",
+        "reportUnnecessaryCast": "none",
+        "reportUnnecessaryComparison": "none",
+    },
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "python.formatting.provider": "autopep8",
+    "python.languageServer": "Pylance",
+    "python.analysis.exclude": [
+        "**/migrations/*"
+    ],
+    "python.linting.maxNumberOfProblems": 1000,
+    "search.exclude": {
+        "**/migrations/*": true
+    },
+    "files.watcherExclude": {
+        "**/migrations/*": true
+    },
+    "python.linting.ignorePatterns": [
+        "**/migrations/*"
+    ],
+    "python.analysis.typeCheckingMode": "strict"
+}

@@ -1,0 +1,87 @@
+[tool.poetry]
+name = "konopka"
+version = "0.1.0"
+description = ""
+authors = ["Daniel Konopka <github@konopka.me>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+ruff = "^0.0.269"
+python-json-logger = "^2.0.7"
+phonenumbers = "^8.13.11"
+django = "^4.2.1"
+attrs = "^23.1.0"
+pydantic = "^1.10.7"
+redis = "^4.5.5"
+django-phonenumber-field = { extras = ["phonenumberslite"], version = "^7.1.0" }
+
+
+[tool.poetry.group.dev.dependencies]
+autopep8 = "^2.0.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.ruff]
+select = [
+    "F",    # catch errors
+    "E",
+    "W",    # make code self explanatory
+    "C901", # complexity check
+    "I",    # import order
+    "N",    # naming conventions
+    "UP",   # promote new language features
+    "YTT",  # sys module misuse
+    "ANN",  # annotations
+    "S",    # security issues
+    "BLE",  # bare except
+    "FBT",  # boolean traps
+    "B",    # design that might cause bugs
+    "A",    # shadowing builtins
+    "COM",  # unified use of commas
+    "C4",   # better comprehensions
+    "DTZ",  # no naive datetimes 
+    "DJ",   # django best practices
+    "ISC",  # str concatenation rules
+    "ICN",  # unusual imports
+    "G",    # logging style
+    "INP",  # __init__.py reminder
+    "PIE",  # some good practices
+    "T20",  # use of print
+    "Q003", # avoid escaping quotes
+    "RSE",  # use of rise with "()"
+    "RET",  # return statements guides
+    "SLF",  # use of private members
+    "SIM",  # simplify code
+    "TID",  # better imports
+    "ARG",  # usused arguments
+    "PTH",  # Path instead of pathlib
+    "PL",   # pylint
+    "TRY",  # try/except management
+    "RUF",  # ruff rules
+]
+
+# don't auto remove unused imports in __init__.py
+# instead suggest to use __all__ variable
+ignore-init-module-imports = true
+
+line-length = 90
+target-version = "py311"
+
+# consider this as the entry point
+src = ["source"]
+
+ignore = [
+    "ANN101", # reports missing self type annotation
+    "ANN102", # reports missing cls type annotation
+    "TRY003", # reports long messages in exceptions 
+    "UP038",  # conflict with pylint - unions not recognised as type
+]
+
+[tool.ruff.flake8-annotations]
+# allow no return type annotations
+# when the func returns None
+suppress-none-returning = true
